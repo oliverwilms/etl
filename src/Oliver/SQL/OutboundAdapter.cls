@@ -1,7 +1,7 @@
 Include (Ensemble, EnsSQLTypes)
 
 /// SQL database client adapter. Executes queries against a remote database via an ODBC- or JDBC- defined DSN (Data Source Name) and retrieves resultsets and/or Stored Procedure return values and output parameters..
-Class Oliver.SQL.OutboundAdapter Extends (Ens.OutboundAdapter, EnsLib.SQL.Common) [ ClassType = "", Inheritance = right, ProcedureBlock, System = 4 ]
+Class Oliver.SQL.OutboundAdapter Extends (Ens.OutboundAdapter, Oliver.SQL.Common) [ ClassType = "", Inheritance = right, ProcedureBlock, System = 4 ]
 {
 
 Method OnInit() As %Status
@@ -127,6 +127,10 @@ Method ExecuteUpdateBatchParamArray(
 	Do ##class(Oliver.SQL.Util).DebugTEST("pSQLStatement = "_pSQLStatement)
 
 		// JDBCGwy is an instance of the JDBC Gateway object. EnsLib.SQL.OutboundAdapter instantiates this automatically and stores a reference to it in ..%Connection.%JGProxy
+	Try {
+		Do ##class(Oliver.SQL.Util).DebugTEST("..%Connection = "_..%Connection)
+		Do ##class(Oliver.SQL.Util).DebugTEST("..%JGProxy = "_..%JGProxy)
+	} Catch {}
 
 		// Prepare the SQL statement
 		Try {
