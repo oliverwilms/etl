@@ -1,0 +1,164 @@
+Export of 1 global from Namespace DMLSS_HC~Format=5.S~
+22 Nov 2021   4:51 AM   Cache
+^DEBUG
+73
+^DEBUG(1)
+20211120 20:00:46.924 : 14037 : Oliver.SQL.OutboundAdapter > OnInit
+^DEBUG(2)
+20211120 20:00:46.924 : 14037 : ..StayConnected = -1
+^DEBUG(3)
+Oliver.SQL.OutboundAdapter > OnInit after super
+^DEBUG(4)
+10@HS.Local.VA.eSCM.DMLSS.ProcessCDWFIle.Context
+^DEBUG(5)
+4@HS.Local.VA.eSCM.DMLSS.ProcessCDWFIle
+^DEBUG(6)
+Oliver.SQL.OutboundAdapter > OnInit after init
+^DEBUG(7)
+20211120 20:00:47.566 : 14037 : Oliver.SQL.OutboundAdapter > before Connect
+^DEBUG(8)
+20211120 20:00:47.566 : 14037 : ..StayConnected = -1
+^DEBUG(9)
+20211120 20:00:48.347 : 14037 : OK
+^DEBUG(10)
+20211120 20:00:48.347 : 14037 : Oliver.SQL.OutboundAdapter > OnInit done
+^DEBUG(11)
+4@HS.Local.VA.eSCM.DMLSS.ProcessCDWFIle
+^DEBUG(12)
+4@HS.Local.VA.eSCM.DMLSS.ProcessCDWFIle
+^DEBUG(13)
+4@HS.Local.VA.eSCM.DMLSS.ProcessCDWFIle
+^DEBUG(14)
+4@HS.Local.VA.eSCM.DMLSS.ProcessCDWFIle
+^DEBUG(15)
+4@HS.Local.VA.eSCM.DMLSS.ProcessCDWFIle
+^DEBUG(16)
+4@HS.Local.VA.eSCM.DMLSS.ProcessCDWFIle
+^DEBUG(17)
+4@HS.Local.VA.eSCM.DMLSS.ProcessCDWFIle
+^DEBUG(18)
+115111|MORGANS AWESOME HOSPITAL|365115|VA|MAH|01|0|1||||||||VA||ICECREAM OPERATION|N|744105|DESERT CONTINGENCY|||C|ORG|7|0|99|0|100|0|99|0|100|
+
+^DEBUG(19)
+D22011|MORGANS AWESOME HOSPITAL||VA|1323|A|0|1||||||||NV||D22011 FAKE PLACE|N||||12345678|O|ORG|5|0|0|0|0|0|0|0|0|
+
+^DEBUG(20)
+D22011|MORGANS AWESOME HOSPITAL||VA|1323|A|0|1||||||||NV||D22011 SO FAKE|N||||12345678|O|ORG|6|0|0|0|0|0|0|0|0|
+
+^DEBUG(21)
+D22011|MORGANS AWESOME HOSPITAL||VA|EXCS|X|XX|1||||||||NV||D22011 – MUCH FAKE|N|||||O|ORG|4|0|0|0|0|0|0|0|0|
+
+^DEBUG(22)
+D22011|MORGANS AWESOME HOSPITAL||VA|H233|2A|4|1||||||||NV||D22011 - WOW|N||||12345678|O|ORG|2|0|72|0|91|0|72|0|91|
+
+^DEBUG(23)
+D22011|MORGANS AWESOME HOSPITAL||VA|H233|3A|18|1||||||||NV|D22011|TEST-TEST-MORE TEST|N||||12345678|O|ORG|3|0|0|0|100|0|0|0|100|
+
+^DEBUG(24)
+D22011|MORGANS AWESOME HOSPITAL||VA|H200|J|0|1||||||||NV||STILL TESTING|N||||12345678|O|ORG|1|0|81|0|97|0|81|0|97|
+
+^DEBUG(25)
+Insert into DMLSS_AM.Assemblage_Instance (SITEID,Sub_Organization_Identifier_sub_org_ID,Sub_Organization_Description,Sub_Organization_Unit_Identification_Code_UIC,Assemblage_Owner_or_Manager_Organization_Branch_of_Service_Code,Assemblage_Identifier,Assemblage_Increment,Assemblage_Sub_Assemblage,Assemblage_Instance_Number,Assm_BCNMRL,Item_Identifier_for_the_Assemblage,Assemblage_Unit_Type_Code_UTC,Assm_Project_Code,Assemblage_Ownership_Purpose_Code,Assemblage_Ownership_Purpose_Code_Description,Assm_ERC_Code,Assemblage_Branch_of_Service_Code,Assm_UIC,Assemblage_Description,Assemblage_Outship_Indicator,Misc_Owned_Fund_Center_or_Customer_Organization_Identifier,Customer_Name,Inventory_Date,Allowance_Standard_Date,Assemblage_Ownership_Code,Sub_Organization_Category_Code,Assemblage_Instance_Serial_Identifier,Sub_Assemblage_Gross_Critical_MAV,Sub_Assemblage_Gross_Total_MAV,Sub_Assemblage_Detail_Critical_MAV,Sub_Assemblage_Detail_Total_MAV,Assemblage_Instance_Gross_Critical_MAV,Assemblage_Instance_Gross_Total_MAV,Assemblage_Instance_Detail_Critical_MAV,Assemblage_Instance_Detail_Total_MAV) values ( '556',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+^DEBUG(26)
+20211120 20:00:48.415 : 14037 : Oliver.SQL.OutboundAdapter > ExecuteUpdateBatchParamArray
+^DEBUG(27)
+20211120 20:00:48.415 : 14037 : ..Connected = 1
+^DEBUG(28)
+20211120 20:00:48.415 : 14037 : pSQLStatement = Insert into DMLSS_AM.Assemblage_Instance (SITEID,Sub_Organization_Identifier_sub_org_ID,Sub_Organization_Description,Sub_Organization_Unit_Identification_Code_UIC,Assemblage_Owner_or_Manager_Organization_Branch_of_Service_Code,Assemblage_Identifier,Assemblage_Increment,Assemblage_Sub_Assemblage,Assemblage_Instance_Number,Assm_BCNMRL,Item_Identifier_for_the_Assemblage,Assemblage_Unit_Type_Code_UTC,Assm_Project_Code,Assemblage_Ownership_Purpose_Code,Assemblage_Ownership_Purpose_Code_Description,Assm_ERC_Code,Assemblage_Branch_of_Service_Code,Assm_UIC,Assemblage_Description,Assemblage_Outship_Indicator,Misc_Owned_Fund_Center_or_Customer_Organization_Identifier,Customer_Name,Inventory_Date,Allowance_Standard_Date,Assemblage_Ownership_Code,Sub_Organization_Category_Code,Assemblage_Instance_Serial_Identifier,Sub_Assemblage_Gross_Critical_MAV,Sub_Assemblage_Gross_Total_MAV,Sub_Assemblage_Detail_Critical_MAV,Sub_Assemblage_Detail_Total_MAV,Assemblage_Instance_Gross_Critical_MAV,Assemblage_Instance_Gross_Total_MAV,Assemblage_Instance_Detail_Critical_MAV,Assemblage_Instance_Detail_Total_MAV) values ( '556',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+^DEBUG(29)
+20211120 20:00:48.415 : 14037 : ..%ConnHandle = 
+^DEBUG(30)
+20211120 20:00:48.415 : 14037 : CATCH pHS = <UNDEFINED>
+^DEBUG(31)
+20211120 20:00:48.415 : 14037 : nbParam = 34
+^DEBUG(32)
+20211120 20:00:48.415 : 14037 : nbBatch = 7
+^DEBUG(33)
+20211120 20:00:48.416 : 14037 : Oliver.SQL.OutboundAdapter > ExecuteUpdateBatchParamArray - tStatus
+^DEBUG(34)
+20211120 20:00:48.416 : 14037 : ERROR #5002: Cache error: <UNDEFINED>zExecuteUpdateBatchParamArray+49^Oliver.SQL.OutboundAdapter.1 *pHS
+^DEBUG(35)
+ERROR #5002: Cache error: <UNDEFINED>zExecuteUpdateBatchParamArray+49^Oliver.SQL.OutboundAdapter.1 *pHS
+^DEBUG(36)
+20211120 20:38:49.629 : 16471 : Oliver.SQL.OutboundAdapter > OnInit
+^DEBUG(37)
+20211120 20:38:49.629 : 16471 : ..StayConnected = -1
+^DEBUG(38)
+Oliver.SQL.OutboundAdapter > OnInit after super
+^DEBUG(39)
+10@HS.Local.VA.eSCM.DMLSS.ProcessCDWFIle.Context
+^DEBUG(40)
+4@HS.Local.VA.eSCM.DMLSS.ProcessCDWFIle
+^DEBUG(41)
+Oliver.SQL.OutboundAdapter > OnInit after init
+^DEBUG(42)
+20211120 20:38:50.245 : 16471 : Oliver.SQL.OutboundAdapter > before Connect
+^DEBUG(43)
+20211120 20:38:50.245 : 16471 : ..StayConnected = -1
+^DEBUG(44)
+20211120 20:38:51.026 : 16471 : OK
+^DEBUG(45)
+20211120 20:38:51.026 : 16471 : Oliver.SQL.OutboundAdapter > OnInit done
+^DEBUG(46)
+4@HS.Local.VA.eSCM.DMLSS.ProcessCDWFIle
+^DEBUG(47)
+4@HS.Local.VA.eSCM.DMLSS.ProcessCDWFIle
+^DEBUG(48)
+4@HS.Local.VA.eSCM.DMLSS.ProcessCDWFIle
+^DEBUG(49)
+4@HS.Local.VA.eSCM.DMLSS.ProcessCDWFIle
+^DEBUG(50)
+4@HS.Local.VA.eSCM.DMLSS.ProcessCDWFIle
+^DEBUG(51)
+4@HS.Local.VA.eSCM.DMLSS.ProcessCDWFIle
+^DEBUG(52)
+4@HS.Local.VA.eSCM.DMLSS.ProcessCDWFIle
+^DEBUG(53)
+115111|MORGANS AWESOME HOSPITAL|365115|VA|MAH|01|0|1||||||||VA||ICECREAM OPERATION|N|744105|DESERT CONTINGENCY|||C|ORG|7|0|99|0|100|0|99|0|100|
+
+^DEBUG(54)
+D22011|MORGANS AWESOME HOSPITAL||VA|1323|A|0|1||||||||NV||D22011 FAKE PLACE|N||||12345678|O|ORG|5|0|0|0|0|0|0|0|0|
+
+^DEBUG(55)
+D22011|MORGANS AWESOME HOSPITAL||VA|1323|A|0|1||||||||NV||D22011 SO FAKE|N||||12345678|O|ORG|6|0|0|0|0|0|0|0|0|
+
+^DEBUG(56)
+D22011|MORGANS AWESOME HOSPITAL||VA|EXCS|X|XX|1||||||||NV||D22011 – MUCH FAKE|N|||||O|ORG|4|0|0|0|0|0|0|0|0|
+
+^DEBUG(57)
+D22011|MORGANS AWESOME HOSPITAL||VA|H233|2A|4|1||||||||NV||D22011 - WOW|N||||12345678|O|ORG|2|0|72|0|91|0|72|0|91|
+
+^DEBUG(58)
+D22011|MORGANS AWESOME HOSPITAL||VA|H233|3A|18|1||||||||NV|D22011|TEST-TEST-MORE TEST|N||||12345678|O|ORG|3|0|0|0|100|0|0|0|100|
+
+^DEBUG(59)
+D22011|MORGANS AWESOME HOSPITAL||VA|H200|J|0|1||||||||NV||STILL TESTING|N||||12345678|O|ORG|1|0|81|0|97|0|81|0|97|
+
+^DEBUG(60)
+Insert into DMLSS_AM.Assemblage_Instance (SITEID,Sub_Organization_Identifier_sub_org_ID,Sub_Organization_Description,Sub_Organization_Unit_Identification_Code_UIC,Assemblage_Owner_or_Manager_Organization_Branch_of_Service_Code,Assemblage_Identifier,Assemblage_Increment,Assemblage_Sub_Assemblage,Assemblage_Instance_Number,Assm_BCNMRL,Item_Identifier_for_the_Assemblage,Assemblage_Unit_Type_Code_UTC,Assm_Project_Code,Assemblage_Ownership_Purpose_Code,Assemblage_Ownership_Purpose_Code_Description,Assm_ERC_Code,Assemblage_Branch_of_Service_Code,Assm_UIC,Assemblage_Description,Assemblage_Outship_Indicator,Misc_Owned_Fund_Center_or_Customer_Organization_Identifier,Customer_Name,Inventory_Date,Allowance_Standard_Date,Assemblage_Ownership_Code,Sub_Organization_Category_Code,Assemblage_Instance_Serial_Identifier,Sub_Assemblage_Gross_Critical_MAV,Sub_Assemblage_Gross_Total_MAV,Sub_Assemblage_Detail_Critical_MAV,Sub_Assemblage_Detail_Total_MAV,Assemblage_Instance_Gross_Critical_MAV,Assemblage_Instance_Gross_Total_MAV,Assemblage_Instance_Detail_Critical_MAV,Assemblage_Instance_Detail_Total_MAV) values ( '556',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+^DEBUG(61)
+20211120 20:38:51.417 : 16471 : Oliver.SQL.OutboundAdapter > ExecuteUpdateBatchParamArray
+^DEBUG(62)
+20211120 20:38:51.417 : 16471 : ..Connected = 1
+^DEBUG(63)
+20211120 20:38:51.417 : 16471 : pSQLStatement = Insert into DMLSS_AM.Assemblage_Instance (SITEID,Sub_Organization_Identifier_sub_org_ID,Sub_Organization_Description,Sub_Organization_Unit_Identification_Code_UIC,Assemblage_Owner_or_Manager_Organization_Branch_of_Service_Code,Assemblage_Identifier,Assemblage_Increment,Assemblage_Sub_Assemblage,Assemblage_Instance_Number,Assm_BCNMRL,Item_Identifier_for_the_Assemblage,Assemblage_Unit_Type_Code_UTC,Assm_Project_Code,Assemblage_Ownership_Purpose_Code,Assemblage_Ownership_Purpose_Code_Description,Assm_ERC_Code,Assemblage_Branch_of_Service_Code,Assm_UIC,Assemblage_Description,Assemblage_Outship_Indicator,Misc_Owned_Fund_Center_or_Customer_Organization_Identifier,Customer_Name,Inventory_Date,Allowance_Standard_Date,Assemblage_Ownership_Code,Sub_Organization_Category_Code,Assemblage_Instance_Serial_Identifier,Sub_Assemblage_Gross_Critical_MAV,Sub_Assemblage_Gross_Total_MAV,Sub_Assemblage_Detail_Critical_MAV,Sub_Assemblage_Detail_Total_MAV,Assemblage_Instance_Gross_Critical_MAV,Assemblage_Instance_Gross_Total_MAV,Assemblage_Instance_Detail_Critical_MAV,Assemblage_Instance_Detail_Total_MAV) values ( '556',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+^DEBUG(64)
+20211120 20:38:51.417 : 16471 : ..%Connection = 5@Oliver.SQL.OutboundAdapter
+^DEBUG(65)
+20211120 20:38:51.417 : 16471 : ..%JGProxy = 
+^DEBUG(66)
+20211120 20:38:51.417 : 16471 : ..%ConnHandle = 
+^DEBUG(67)
+20211120 20:38:51.417 : 16471 : CATCH pHS = <UNDEFINED>
+^DEBUG(68)
+20211120 20:38:51.417 : 16471 : nbParam = 34
+^DEBUG(69)
+20211120 20:38:51.417 : 16471 : nbBatch = 7
+^DEBUG(70)
+20211120 20:38:51.418 : 16471 : Oliver.SQL.OutboundAdapter > ExecuteUpdateBatchParamArray - catch exp
+^DEBUG(71)
+20211120 20:38:51.418 : 16471 : Oliver.SQL.OutboundAdapter > ExecuteUpdateBatchParamArray - tStatus
+^DEBUG(72)
+20211120 20:38:51.418 : 16471 : ERROR #5002: Cache error: <UNDEFINED>zExecuteUpdateBatchParamArray+53^Oliver.SQL.OutboundAdapter.1 *pHS
+^DEBUG(73)
+ERROR #5002: Cache error: <UNDEFINED>zExecuteUpdateBatchParamArray+53^Oliver.SQL.OutboundAdapter.1 *pHS
