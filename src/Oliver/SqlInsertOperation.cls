@@ -1,6 +1,6 @@
 Include EnsSQLTypes
 
-Class Oliver.SqlInsertOperation Extends EnsLib.JavaGateway.AbstractOperation
+Class Oliver.SqlInsertOperation Extends Ens.BusinessOperation
 {
 
 Parameter ADAPTER = "Oliver.SQL.OutboundAdapter";
@@ -34,8 +34,8 @@ Method BatchInsert(
 
 	Set tStatus = $$$OK
 	Try {
-		Set tSC = ..GetConnection(.tGateway)
-		Do ##class(Oliver.SQL.Util).DebugTEST("tGateway = "_tGateway)
+		//Set tSC = ..GetConnection(.tGateway)
+		//Do ##class(Oliver.SQL.Util).DebugTEST("tGateway = "_tGateway)
 
 		Set tLineCount = 0
 		set tInsertCount = 0
