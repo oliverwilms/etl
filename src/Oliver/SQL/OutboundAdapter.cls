@@ -8,6 +8,7 @@ Method OnInit() As %Status
 {
 	Set ..JGClientEnsClassname = "Oliver.SQL.JDBCGateway"
 	Do ##class(Oliver.SQL.Util).DebugTEST("Oliver.SQL.OutboundAdapter > OnInit")
+	Do ##class(Oliver.SQL.Util).DebugTEST("$this = "_$this)
 	Do ##class(Oliver.SQL.Util).DebugTEST("..StayConnected = "_..StayConnected)
 
 	#; Create an instance of the SQLGateway object
@@ -22,7 +23,20 @@ Method OnInit() As %Status
 	Else { $$$SetJobMonitor(..BusinessHost.%ConfigName,$$$SystemName_":"_$Job,$$$eMonitorConnected,"0|"_$$$timeUTC) }
 	Do ##class(Oliver.SQL.Util).DebugStatus(tSC)
 	// Comment this for Ensemble 2016.2
-	Do ..deleteRuntimeAppData()
+	// Do ..deleteRuntimeAppData()
+	Try {
+		Do ##class(Oliver.SQL.Util).DebugTEST("..%Connection = "_..%Connection)
+		Do ##class(Oliver.SQL.Util).DebugTEST("..%ConnHandle = "_..%ConnHandle)
+		Do ##class(Oliver.SQL.Util).DebugTEST("..%JGProxy = "_..%JGProxy)
+		If ("" = ..%ConnHandle) {
+			Set ..%ConnHandle = ..%Connection.%ConnHandle
+			Do ##class(Oliver.SQL.Util).DebugTEST("..%ConnHandle = "_..%ConnHandle)
+		}
+		If ("" = ..%JGProxy) {
+			Set ..%JGProxy = ..%Connection.%JGProxy
+			Do ##class(Oliver.SQL.Util).DebugTEST("..%JGProxy = "_..%JGProxy)
+		}
+	} Catch {}
 	Do ##class(Oliver.SQL.Util).DebugTEST("Oliver.SQL.OutboundAdapter > OnInit done")
 	Quit $$$OK
 }
@@ -111,6 +125,7 @@ Method ExecuteUpdateBatchParamArray(
 	pParms...) As %Status
 {
 	Do ##class(Oliver.SQL.Util).DebugTEST("Oliver.SQL.OutboundAdapter > ExecuteUpdateBatchParamArray")
+	Do ##class(Oliver.SQL.Util).DebugTEST("$this = "_$this)
 	set tStatus = $$$OK
 	Set tConnected = ..Connected
 	Do ##class(Oliver.SQL.Util).DebugTEST("..Connected = "_tConnected)
@@ -129,17 +144,18 @@ Method ExecuteUpdateBatchParamArray(
 		// JDBCGwy is an instance of the JDBC Gateway object. EnsLib.SQL.OutboundAdapter instantiates this automatically and stores a reference to it in ..%Connection.%JGProxy
 	Try {
 		Do ##class(Oliver.SQL.Util).DebugTEST("..%Connection = "_..%Connection)
+		Do ##class(Oliver.SQL.Util).DebugTEST("..%ConnHandle = "_..%ConnHandle)
 		Do ##class(Oliver.SQL.Util).DebugTEST("..%JGProxy = "_..%JGProxy)
 	} Catch {}
 
 		// Prepare the SQL statement
-		Try {
+	//	Try {
 	Do ##class(Oliver.SQL.Util).DebugTEST("..%ConnHandle = "_..%ConnHandle)
 		Set pHS=..%JGProxy.prepareStatement(..%ConnHandle,pSQLStatement)
 	Do ##class(Oliver.SQL.Util).DebugTEST("pHS = "_pHS)
-		} Catch {
-			Do ##class(Oliver.SQL.Util).DebugTEST("CATCH pHS = "_$Get(pHS,"<UNDEFINED>"))  // <UNDEFINED> *pHS
-		}
+	//	} Catch {
+	//		Do ##class(Oliver.SQL.Util).DebugTEST("CATCH pHS = "_$Get(pHS,"<UNDEFINED>"))  // <UNDEFINED> *pHS
+	//	}
 		
 		// executeParametersBatch expects tArgs to be a $LIST, with the following format:
 		//     ParamCount, ParamSets, Type1, Param1, Type2, Param2, Type3, Param3, Type11,Param11 TypeNN,ParamNN
