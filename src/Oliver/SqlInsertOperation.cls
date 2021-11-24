@@ -1,6 +1,6 @@
 Include EnsSQLTypes
 
-Class Oliver.SqlInsertOperation Extends Ens.BusinessOperation
+Class Oliver.SqlInsertOperation Extends EnsLib.JavaGateway.AbstractOperation
 {
 
 Parameter ADAPTER = "Oliver.SQL.OutboundAdapter";
@@ -19,6 +19,8 @@ Parameter INVOCATION = "Queue";
 
 Method OnInit() As %Status
 {
+	Do ##class(Oliver.SQL.Util).DebugTEST("Oliver.SqlInsertOperation > OnInit")
+
 	Do ##super()
 	SET $ZSTORAGE=2147483647
 	q $$$OK
@@ -28,8 +30,13 @@ Method BatchInsert(
 	pRequest As Oliver.SQL.InsertRequest,
 	Output pResponse As Ens.Response) As %Status
 {
+	Do ##class(Oliver.SQL.Util).DebugTEST("Oliver.SqlInsertOperation > BatchInsert")
+
 	Set tStatus = $$$OK
 	Try {
+		Set tSC = ..GetConnection(.tGateway)
+		Do ##class(Oliver.SQL.Util).DebugTEST("tGateway = "_tGateway)
+
 		Set tLineCount = 0
 		set tInsertCount = 0
 
@@ -65,6 +72,8 @@ Method BatchInsert(
 		Set batchRow = 0
 			kill param
 			set param = ""
+		Set tInsertCols = ""
+		Set tSC = pRequest.Stream.Rewind()
 		While ('pRequest.Stream.AtEnd) {
 			Set tSourceLine = pRequest.Stream.ReadLine()
 			If (tSourceLine = "") Continue
@@ -95,6 +104,8 @@ Method BatchInsert(
 		Set ^DEBUG($I(^DEBUG)) = SqlInsertView
 		     
 			set param = batchRow
+
+	Do ##class(Oliver.SQL.Util).DebugTEST("..Adapter = "_..Adapter)
 			
 			set sc = ..Adapter.ExecuteUpdateBatchParamArray(.nrows,SqlInsertView,.param)
 			Set tInfo = $system.Status.GetOneErrorText(sc)
@@ -104,13 +115,15 @@ Method BatchInsert(
 
 			k param
 				
-			set tInsertCount = tInsertCount + nrows
+			set tInsertCount = tInsertCount + $Get(nrows,0)
 
 	
 
 
 	} Catch ex {
+		Do ##class(Oliver.SQL.Util).DebugTEST("Oliver.SqlInsertOperation > BatchInsert CATCH")
 		Set tStatus = ex.AsStatus()
+		Do ##class(Oliver.SQL.Util).DebugStatus(tStatus)
 	}
 	Quit tStatus
 }
