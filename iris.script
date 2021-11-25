@@ -1,0 +1,6 @@
+    ; run installer to create namespace
+    zn "%SYS"
+    do $SYSTEM.OBJ.Load("/opt/irisapp/Installer.cls", "ck")
+    set sc = ##class(Irisapp.Installer).setup()
+    w ##class(Security.Users).UnExpireUserPasswords("*")
+    halt
