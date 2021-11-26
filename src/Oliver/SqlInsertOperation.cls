@@ -81,21 +81,25 @@ Method BatchInsert(
 			set batchRow = batchRow + 1
 				Set tInsertCols = "SITEID"
 				Set tInsertValues = "'"_pRequest.SiteID_"'"
+				Set tInsertValues = "?"
+				Set ii = 1
+				Set param(batchRow,1) = pRequest.SiteID
+				Set param(batchRow,1,"SqlType") = $$$SqlVarchar 
 			Set dataFields = $L(tSourceLine,"|")-1
 			for i=1:1:dataFields {
 				set tmpValue=$P(tSourceLine,"|",i)
 				set tCol = $P(pRequest.TableFields,"|",i)
 				Set tColName = $P(tCol,":",1)
 				Set tColType = $ZCONVERT($P(tCol,":",2),"U") 
-
-				Set param(batchRow,i) = tmpValue
-				Set param(batchRow,i,"SqlType") = $$$SqlVarchar 
+				Set ii = i + 1
+				Set param(batchRow,ii) = tmpValue
+				Set param(batchRow,ii,"SqlType") = $$$SqlVarchar 
 
 				Set tInsertCols = tInsertCols_","_tColName
 				Set tInsertValues = tInsertValues_",?"
 
 			}
-			Set param(batchRow) = dataFields
+			Set param(batchRow) = dataFields + 1
 			Set tSourceLine=""
 			Set tLineCount = tLineCount + 1
 		}
